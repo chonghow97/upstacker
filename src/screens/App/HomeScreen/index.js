@@ -1,12 +1,21 @@
 import React from 'react';
-import Screen from '../../../components/Screen';
-import Text from '../../../components/Text';
+import Text from '@component/Text';
+import Input from '@component/Input';
+import {useQuery} from 'react-query';
+import {fetchRepo} from '../../../apis';
 
 const HomeScreen = () => {
+  const {loading, data} = useQuery('fetch-repo', fetchRepo);
+
+  if (loading) return <Text text="Loading..." />;
+
   return (
-    <Screen>
-      <Text text="Hello World" />
-    </Screen>
+    <>
+      <Input className="mb-5" />
+      {data?.map(d => (
+        <Text key={d?.id} text={d?.name} />
+      ))}
+    </>
   );
 };
 
