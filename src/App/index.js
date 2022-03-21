@@ -1,11 +1,11 @@
 import React from 'react';
 import Provider from './Provider';
-import HomeScreen from '../screens/App/HomeScreen';
+import RootNavigator from '../navigation/RootNavigator';
 
 const App = () => {
   return (
     <Provider>
-      <HomeScreen />
+      <RootNavigator />
     </Provider>
   );
 };
