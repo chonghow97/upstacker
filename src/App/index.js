@@ -1,6 +1,6 @@
 import React from 'react';
 import Provider from './Provider';
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/App/HomeScreen';
 
 const App = () => {
   return (

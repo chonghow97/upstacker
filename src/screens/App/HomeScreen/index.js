@@ -1,11 +1,11 @@
-import {Text} from 'react-native';
 import React from 'react';
-import Screen from '../../components/Screen';
+import Screen from '../../../components/Screen';
+import Text from '../../../components/Text';
 
 const HomeScreen = () => {
   return (
     <Screen>
-      <Text>HomeScreen</Text>
+      <Text text="Hello World" />
     </Screen>
   );
 };
