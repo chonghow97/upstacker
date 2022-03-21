@@ -7,11 +7,9 @@ import {QueryClient, QueryClientProvider} from 'react-query';
 const queryClient = new QueryClient();
 
 const Provider = ({children}) => {
-  const isDarkMode = useColorScheme();
-
   return (
     <QueryClientProvider client={queryClient}>
-      <TailwindProvider utilities={utilities} colorScheme={isDarkMode}>
+      <TailwindProvider utilities={utilities} colorScheme={useColorScheme()}>
         {children}
       </TailwindProvider>
     </QueryClientProvider>
