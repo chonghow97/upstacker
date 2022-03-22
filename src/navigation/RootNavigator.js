@@ -16,7 +16,7 @@ const RootNavigator = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="upstacker" component={HomeScreen} />
         <Stack.Screen name="repoDetail" component={RepoDetailScreen} />

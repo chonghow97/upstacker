@@ -1,6 +1,6 @@
-import React from 'react';
-import {FlatList, ScrollView, RefreshControl} from 'react-native';
-import {useQuery} from 'react-query';
+import React, {useState} from 'react';
+import {FlatList, RefreshControl} from 'react-native';
+import {useInfiniteQuery, useQuery} from 'react-query';
 import {fetchRepo} from 'apis';
 import Text from 'components/Text';
 import Input from 'components/Input';
@@ -9,10 +9,17 @@ import RepoList from 'containers/RepoList';
 import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
-  const {loading, data, error, refetch} = useQuery(
-    ['fetch-repo', {per_page: 10}],
-    fetchRepo,
-  );
+  const [query, setQuery] = useState('');
+  const {isLoading, data, isError, isSuccess, refetch, fetchNextPage} =
+    useInfiniteQuery(['fetch-repo', {per_page: 10, pageParam: 1}], fetchRepo, {
+      getNextPageParam: (lastPage, allPages) => {
+        const maxPage = lastPage?.total_count / 10;
+        const nextPage = allPages?.length + 1;
+
+        return nextPage <= maxPage ? nextPage : undefined;
+      },
+    });
+
   const [refreshing, setRefreshing] = React.useState(false);
 
   const {push} = useNavigation();
@@ -23,34 +30,43 @@ const HomeScreen = () => {
     setRefreshing(false);
   }, []);
 
-  if (error) return <Text text="Error" />;
-  if (!data || loading) return <Text text="Loading..." />;
+  const renderItem = ({item: items}) => {
+    const renderList = ({item}) => {
+      const onPress = () => {
+        push('repoDetail', {itemId: item?.name});
+      };
 
-  const renderItem = ({item}) => {
-    const onPress = () => {
-      push('repoDetail', {itemId: item?.name});
+      return (
+        <RepoList
+          onPress={onPress}
+          description={item?.description}
+          title={item?.name}
+        />
+      );
     };
 
     return (
-      <RepoList
-        onPress={onPress}
-        description={item?.description}
-        title={item?.name}
-      />
+      <FlatList data={items?.items} key={i => i.id} renderItem={renderList} />
     );
   };
 
   return (
     <Screen>
       <Input placeholder="Search" className="mb-5" />
-      <FlatList
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item?.id}
-      />
+
+      {isLoading && <Text text="Loading..." />}
+      {isError && <Text text="Error" />}
+
+      {isSuccess && (
+        <FlatList
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+          data={data?.pages}
+          renderItem={renderItem}
+          onEndReached={fetchNextPage}
+        />
+      )}
     </Screen>
   );
 };
