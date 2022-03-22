@@ -1,5 +1,6 @@
 import React from 'react';
-import HomeScreen from '../screens/App/HomeScreen';
+import HomeScreen from 'screens/App/HomeScreen';
+import RepoDetailScreen from 'screens/App/RepoDetailScreen';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -17,7 +18,8 @@ const RootNavigator = () => {
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
-        <Stack.Screen name="Upstacker" component={HomeScreen} />
+        <Stack.Screen name="upstacker" component={HomeScreen} />
+        <Stack.Screen name="repoDetail" component={RepoDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
