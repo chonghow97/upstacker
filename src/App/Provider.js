@@ -3,15 +3,16 @@ import {useColorScheme} from 'react-native';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from '../../tailwind.json';
 
-const Provider = ({children}) => {
-  const isDarkMode = useColorScheme();
+import {QueryClient, QueryClientProvider} from 'react-query';
+const queryClient = new QueryClient();
 
+const Provider = ({children}) => {
   return (
-    <>
-      <TailwindProvider utilities={utilities} colorScheme={isDarkMode}>
+    <QueryClientProvider client={queryClient}>
+      <TailwindProvider utilities={utilities} colorScheme={useColorScheme()}>
         {children}
       </TailwindProvider>
-    </>
+    </QueryClientProvider>
   );
 };
 
