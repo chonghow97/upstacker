@@ -17,8 +17,6 @@ const HomeScreen = () => {
 
   const {push} = useNavigation();
 
-  console.log(data);
-
   const onRefresh = React.useCallback(async () => {
     setRefreshing(true);
     await refetch();

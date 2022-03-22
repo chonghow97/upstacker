@@ -17,8 +17,6 @@ const RepoDetailScreen = ({route}) => {
 
   if (loading) return <Text text="Loading..." />;
 
-  console.log(data);
-
   return (
     <Screen>
       <Text>{data?.name}</Text>
