@@ -15,7 +15,7 @@ export const Screen = props => {
 
   return (
     <SafeAreaView style={myStyle} {...restProps}>
-      <View style={tw('py-3 px-1.5')}>{children}</View>
+      <View style={tw('py-3 px-1.5 mb-12')}>{children}</View>
     </SafeAreaView>
   );
 };

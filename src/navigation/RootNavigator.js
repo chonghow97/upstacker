@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeScreen from 'screens/App/HomeScreen';
+import TestScreen from 'screens/App/Test';
 import RepoDetailScreen from 'screens/App/RepoDetailScreen';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -17,9 +18,26 @@ const RootNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="upstacker" component={HomeScreen} />
-        <Stack.Screen name="repoDetail" component={RepoDetailScreen} />
+      <Stack.Navigator initialRouteName="app">
+        <Stack.Screen
+          name="test"
+          options={{title: 'Test', headerShown: false}}
+          component={TestScreen}
+        />
+        <Stack.Screen
+          name="app"
+          options={{title: 'React Community', headerShown: false}}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="repoDetail"
+          component={RepoDetailScreen}
+          options={{
+            title: 'React Community',
+            fullScreenGestureEnabled: true,
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

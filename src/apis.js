@@ -5,12 +5,16 @@ axios.defaults.headers = {
   'user-Agent': 'request',
 };
 
-export const fetchRepo = async ({signal, queryKey}) => {
-  const [key, {per_page, pageParam}] = queryKey;
-  const {data} = await axios.get('/search/repositories?q=user:reactjs', {
-    params: {per_page, page: pageParam, sort: 'stars', direction: 'desc'},
-    signal,
-  });
+export const fetchRepo = async ({signal, queryKey, pageParam = 0}) => {
+  const [key, {per_page, query}] = queryKey;
+
+  const {data} = await axios.get(
+    `/search/repositories?q=${query}+user:reactjs`,
+    {
+      params: {per_page, page: pageParam, sort: 'stars', direction: 'desc'},
+      signal,
+    },
+  );
 
   return data;
 };
