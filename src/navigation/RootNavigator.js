@@ -18,7 +18,7 @@ const RootNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="app">
+      <Stack.Navigator initialRouteName="test">
         <Stack.Screen
           name="test"
           options={{title: 'Test', headerShown: false}}
