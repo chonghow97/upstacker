@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FlatList} from 'react-native';
 import Text from 'components/Text';
 import View from 'components/View';
 import Screen from 'components/Screen';
+import {getUser} from 'redux/ducks/user';
 
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import Counter from './Counter';
 
 const TestScreen = () => {
+  const dispatch = useDispatch();
+
   const counter = useSelector(state => state.counter.count);
   const voters = [
     'Anthony Sistilli',
@@ -15,6 +18,14 @@ const TestScreen = () => {
     'Stephanie Foo',
     'Kelvin Ma',
   ];
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
+
+  const user = useSelector(state => state.user);
+
+  console.log(user);
 
   return (
     <Screen>
