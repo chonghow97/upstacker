@@ -13,13 +13,14 @@ const HomeScreen = () => {
     isSuccess,
     onChange,
     onRefresh,
+    isRefetching,
     ...repoProps
   } = useHooks();
 
   return (
     <Screen>
       <Input onChangeText={onChange} placeholder="Search" className="mb-5" />
-      {isLoading && <Text text="Loading..." />}
+      {(isLoading || isRefetching) && <Text text="Loading..." />}
       {isError && <Text text="Error" onPress={onRefresh} />}
       {isSuccess && <RepoListContainer {...repoProps} onRefresh={onRefresh} />}
     </Screen>
