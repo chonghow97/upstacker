@@ -14,7 +14,7 @@ const ScrollTop = ({className, show, trigger, onPress, ...restProps}) => {
 
   const myStyle = tw(
     classNames(
-      'bg-blue-200 dark:bg-gray-400 z-10 w-12 h-12 flex items-center justify-center rounded-full absolute bottom-12 right-3',
+      'bg-gray-400 dark:bg-blue-200 z-10 w-12 h-12 flex items-center justify-center rounded-full absolute bottom-12 right-3',
       className,
     ),
   );

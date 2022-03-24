@@ -87,6 +87,30 @@
   margin-top: 3rem
 }
 
+.-mt-10 {
+  margin-top: -2.5rem
+}
+
+.-mt-8 {
+  margin-top: -2rem
+}
+
+.mt-8 {
+  margin-top: 2rem
+}
+
+.mt-4 {
+  margin-top: 1rem
+}
+
+.-mt-1 {
+  margin-top: -0.25rem
+}
+
+.-mt-6 {
+  margin-top: -1.5rem
+}
+
 .block {
   display: block
 }
@@ -113,6 +137,10 @@
 
 .h-10 {
   height: 2.5rem
+}
+
+.h-20 {
+  height: 5rem
 }
 
 .w-7 {
@@ -236,6 +264,15 @@
   background-color: rgb(156 163 175 / var(--tw-bg-opacity))
 }
 
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity))
+}
+
+.bg-black\/30 {
+  background-color: rgb(0 0 0 / 0.3)
+}
+
 .p-7 {
   padding: 1.75rem
 }
@@ -297,6 +334,18 @@
 
 .pt-1 {
   padding-top: 0.25rem
+}
+
+.pr-3 {
+  padding-right: 0.75rem
+}
+
+.pr-10 {
+  padding-right: 2.5rem
+}
+
+.pr-4 {
+  padding-right: 1rem
 }
 
 .text-center {
