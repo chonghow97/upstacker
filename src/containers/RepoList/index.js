@@ -59,11 +59,13 @@ const RepoListContainer = props => {
         }
         onEndReached={onEndReached}
       />
-      <ScrollTop
-        trigger={flatListRef}
-        show={show}
-        onPress={() => setShow(false)}
-      />
+      {data?.pages[0]?.items?.length > 5 && (
+        <ScrollTop
+          trigger={flatListRef}
+          show={show}
+          onPress={() => setShow(false)}
+        />
+      )}
     </>
   );
 };

@@ -7,10 +7,15 @@ const Input = ({className, ...restProps}) => {
   const tw = useTailwind();
 
   const myStyle = tw(
-    classNames('dark:text-white px-1.5 py-3 bg-gray-300 rounded', className),
+    classNames(
+      'dark:text-white px-1.5 py-3 bg-gray-300 rounded dark:bg-transparent dark:border-white dark:border',
+      className,
+    ),
   );
 
-  return <TextInput style={myStyle} {...restProps} />;
+  return (
+    <TextInput style={myStyle} {...restProps} placeholderTextColor="#fff" />
+  );
 };
 
 export default Input;

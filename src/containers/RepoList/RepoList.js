@@ -9,11 +9,13 @@ const RepoList = ({title, description, ...restProps}) => {
 
   return (
     <TouchableOpacity
-      style={tw('border px-1.5 py-3 mb-5 rounded')}
+      style={tw(
+        'border dark:border-0 dark:bg-gray-800 px-1.5 py-3 mb-5 rounded',
+      )}
       {...restProps}>
-      <Text className="text-lg font-bold" text={title} />
+      <Text className="text-lg font-bold dark:text-blue-500" text={title} />
       <Text
-        className="text-sm text-gray-600"
+        className="text-sm text-gray-600 dark:text-gray-200"
         text={description || 'No Description'}
       />
     </TouchableOpacity>
