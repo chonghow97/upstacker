@@ -1,23 +1,70 @@
-import Text from 'components/Text';
-import {TouchableOpacity} from 'react-native';
-import {useTailwind} from 'tailwind-rn';
-
 import React from 'react';
+import {FlatList, RefreshControl} from 'react-native';
+import Text from 'components/Text';
+import ScrollTop from 'components/ScrollTop';
+import RepoList from './RepoList';
 
-const RepoList = ({title, description, ...restProps}) => {
-  const tw = useTailwind();
+const RepoListContainer = props => {
+  const {
+    data,
+    hasNextPage,
+    isFetchingNextPage,
+    show,
+    setShow,
+    refreshing,
+    flatListRef,
+    onEndReached,
+    onRefresh,
+  } = props;
+
+  const renderItem = ({item: items}) => {
+    const renderList = ({item}) => {
+      const onPress = () => {
+        push('repoDetail', {itemId: item?.name});
+      };
+
+      return (
+        <RepoList
+          onPress={onPress}
+          description={item?.description}
+          title={item?.name}
+        />
+      );
+    };
+
+    return (
+      <FlatList data={items?.items} key={i => i.id} renderItem={renderList} />
+    );
+  };
 
   return (
-    <TouchableOpacity
-      style={tw('border px-1.5 py-3 mb-5 rounded')}
-      {...restProps}>
-      <Text className="text-lg font-bold" text={title || 'Untitled'} />
-      <Text
-        className="text-sm text-gray-600"
-        text={description || 'No Description'}
+    <>
+      <FlatList
+        ref={flatListRef}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+        onScrollEndDrag={() => setShow(true)}
+        data={data?.pages}
+        renderItem={renderItem}
+        ListFooterComponent={
+          <Text className="text-center mb-5 text-xs">
+            {isFetchingNextPage
+              ? 'Loading more...'
+              : hasNextPage
+              ? 'Load More'
+              : 'Nothing more to load'}
+          </Text>
+        }
+        onEndReached={onEndReached}
       />
-    </TouchableOpacity>
+      <ScrollTop
+        trigger={flatListRef}
+        show={show}
+        onPress={() => setShow(false)}
+      />
+    </>
   );
 };
 
-export default RepoList;
+export default RepoListContainer;
