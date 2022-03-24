@@ -25,7 +25,7 @@ const HomeScreen = () => {
         <RepoListContainer {...repoProps} onRefresh={onRefresh} push={push} />
       );
     if (isLoading || isRefetching) return <Empty />;
-    if (isError || true)
+    if (isError)
       return (
         <Empty
           icon={<EmptyIcon width={300} height={350} />}

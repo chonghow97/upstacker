@@ -10,10 +10,14 @@ const Empty = ({icon, content, title, className, onPress, ...restProps}) => {
   const myStyle = tw(classNames('flex justify-center items-center', className));
   return (
     <View style={myStyle} {...restProps}>
-      {icon || <EmptyIcon width={300} height={350} />}
+      <View style={tw('dark:bg-gray-200 dark:p-10 dark:rounded-lg')}>
+        {icon || <EmptyIcon width={300} height={350} />}
+      </View>
       {title && (
         <View style={tw('mt-12')}>
-          <Text style={tw('text-lg font-bold text-center')}>{title}</Text>
+          <Text style={tw('text-lg font-bold text-center dark:text-white')}>
+            {title}
+          </Text>
           {content || ''}
         </View>
       )}
