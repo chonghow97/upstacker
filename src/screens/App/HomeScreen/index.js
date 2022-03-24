@@ -17,12 +17,17 @@ const HomeScreen = () => {
     ...repoProps
   } = useHooks();
 
+  const renderContent = () => {
+    if (isSuccess)
+      return <RepoListContainer {...repoProps} onRefresh={onRefresh} />;
+    if (isLoading || isRefetching) return <Text text="Loading..." />;
+    if (isError) return <Text text="Error" onPress={onRefresh} />;
+  };
+
   return (
     <Screen>
       <Input onChangeText={onChange} placeholder="Search" className="mb-5" />
-      {(isLoading || isRefetching) && <Text text="Loading..." />}
-      {isError && <Text text="Error" onPress={onRefresh} />}
-      {isSuccess && <RepoListContainer {...repoProps} onRefresh={onRefresh} />}
+      {renderContent()}
     </Screen>
   );
 };
