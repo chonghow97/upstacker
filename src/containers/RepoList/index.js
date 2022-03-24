@@ -13,6 +13,7 @@ const RepoListContainer = props => {
     setShow,
     refreshing,
     flatListRef,
+    push,
     onEndReached,
     onRefresh,
   } = props;

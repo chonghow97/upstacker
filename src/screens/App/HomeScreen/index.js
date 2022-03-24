@@ -19,7 +19,9 @@ const HomeScreen = () => {
 
   const renderContent = () => {
     if (isSuccess)
-      return <RepoListContainer {...repoProps} onRefresh={onRefresh} />;
+      return (
+        <RepoListContainer {...repoProps} onRefresh={onRefresh} push={push} />
+      );
     if (isLoading || isRefetching) return <Text text="Loading..." />;
     if (isError) return <Text text="Error" onPress={onRefresh} />;
   };
