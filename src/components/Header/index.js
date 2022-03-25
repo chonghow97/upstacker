@@ -13,7 +13,7 @@ const Header = props => {
   return (
     <View style={tw('flex-row w-[95%] justify-between items-center h-12')}>
       <Github fill={color} height={40} width={60} />
-      <Search fill={color} style={tw('-mt-1')} />
+      {/* <Search fill={color} style={tw('-mt-1')} /> */}
       {/* <Input className="flex-1" /> */}
     </View>
   );
