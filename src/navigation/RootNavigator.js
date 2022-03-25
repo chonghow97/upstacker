@@ -2,11 +2,7 @@ import React from 'react';
 import HomeScreen from 'screens/App/HomeScreen';
 import TestScreen from 'screens/App/Test';
 import RepoDetailScreen from 'screens/App/RepoDetailScreen';
-import Text from 'components/Text';
-import View from 'components/View';
-import Github from 'asset/svg/github.svg';
-import Search from 'asset/svg/search.svg';
-
+import Header from 'components/Header';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -22,7 +18,6 @@ const MyTheme = {
 
 const RootNavigator = () => {
   const tw = useTailwind();
-
   const {color} = tw('text-black dark:text-white');
 
   const Stack = createNativeStackNavigator();
@@ -41,17 +36,7 @@ const RootNavigator = () => {
           options={{
             title: 'React Community',
             headerShown: true,
-            headerTitle: props => (
-              <View className="flex-row flex-1 justify-between items-center pr-4">
-                <Github
-                  fill={color}
-                  height={30}
-                  width={80}
-                  // style={tw('-mt-6')}
-                />
-                <Search fill={color} style={tw('-mt-1')} />
-              </View>
-            ),
+            headerTitle: Header,
             headerStyle: tw('dark:bg-gray-800'),
             headerTintColor: color,
           }}
