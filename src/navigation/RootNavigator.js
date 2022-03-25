@@ -46,9 +46,11 @@ const RootNavigator = () => {
           name="repoDetail"
           component={RepoDetailScreen}
           options={{
-            title: 'React Community',
+            title: '',
             fullScreenGestureEnabled: true,
-            headerShown: false,
+            headerShown: true,
+            headerStyle: tw('dark:bg-gray-800'),
+            headerTintColor: color,
           }}
         />
       </Stack.Navigator>
