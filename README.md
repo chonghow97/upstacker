@@ -13,3 +13,9 @@
 - react-native-svg
 - classnames
 - lodash
+
+# Demo
+
+
+https://user-images.githubusercontent.com/31228115/160053400-406bb404-7b7b-4662-bc25-1a8a7f66ff22.mp4
+
