@@ -11,7 +11,6 @@ export const api = axios;
 
 export const fetchRepo = async ({signal, queryKey, pageParam = 0}) => {
   const [key, {per_page, query}] = queryKey;
-  console.log(query);
   const {data} = await api.get(`/search/repositories?q=${query}+user:reactjs`, {
     params: {per_page, page: pageParam, sort: 'stars', direction: 'desc'},
     signal,

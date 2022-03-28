@@ -4,16 +4,6 @@
 			"position": "absolute"
 		}
 	},
-	"bottom-12": {
-		"style": {
-			"bottom": 48
-		}
-	},
-	"right-3": {
-		"style": {
-			"right": 12
-		}
-	},
 	"top-2": {
 		"style": {
 			"top": 8
@@ -22,6 +12,16 @@
 	"right-2": {
 		"style": {
 			"right": 8
+		}
+	},
+	"bottom-12": {
+		"style": {
+			"bottom": 48
+		}
+	},
+	"right-3": {
+		"style": {
+			"right": 12
 		}
 	},
 	"z-10": {
@@ -53,6 +53,11 @@
 			"marginTop": -4
 		}
 	},
+	"ml-3": {
+		"style": {
+			"marginLeft": 12
+		}
+	},
 	"mr-1": {
 		"style": {
 			"marginRight": 4
@@ -81,6 +86,16 @@
 	"h-12": {
 		"style": {
 			"height": 48
+		}
+	},
+	"h-20": {
+		"style": {
+			"height": 80
+		}
+	},
+	"h-32": {
+		"style": {
+			"height": 128
 		}
 	},
 	"w-[95%]": {
@@ -158,16 +173,16 @@
 			"backgroundColor": "rgb(209 213 219 / var(--tw-bg-opacity))"
 		}
 	},
-	"bg-white": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
-		}
-	},
 	"bg-gray-400": {
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(156 163 175 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-white": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
 		}
 	},
 	"p-2": {
@@ -202,11 +217,6 @@
 			"paddingRight": 12
 		}
 	},
-	"pt-3": {
-		"style": {
-			"paddingTop": 12
-		}
-	},
 	"pt-1.5": {
 		"style": {
 			"paddingTop": 6
@@ -220,6 +230,11 @@
 	"pt-1": {
 		"style": {
 			"paddingTop": 4
+		}
+	},
+	"pt-3": {
+		"style": {
+			"paddingTop": 12
 		}
 	},
 	"text-center": {
@@ -349,17 +364,17 @@
 		},
 		"media": "(prefers-color-scheme: dark)"
 	},
-	"dark:bg-black": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
-		},
-		"media": "(prefers-color-scheme: dark)"
-	},
 	"dark:bg-blue-200": {
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(191 219 254 / var(--tw-bg-opacity))"
+		},
+		"media": "(prefers-color-scheme: dark)"
+	},
+	"dark:bg-black": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
 		},
 		"media": "(prefers-color-scheme: dark)"
 	},

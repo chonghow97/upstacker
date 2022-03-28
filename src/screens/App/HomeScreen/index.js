@@ -1,7 +1,6 @@
 import React from 'react';
 import useHooks from './hooks';
 import Text from 'components/Text';
-import Input from 'components/Input';
 import Empty from 'components/Empty';
 import Screen from 'components/Screen';
 import EmptyIcon from 'asset/svg/empty.svg';

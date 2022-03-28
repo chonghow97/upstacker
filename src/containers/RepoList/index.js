@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList, RefreshControl} from 'react-native';
 import Text from 'components/Text';
 import ScrollTop from 'components/ScrollTop';
-import RepoList from './RepoList';
+import RepoList from 'components/RepoList';
 
 const RepoListContainer = props => {
   const {

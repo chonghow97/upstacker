@@ -22,6 +22,10 @@ const Input = ({className, ...restProps}) => {
 
       <TextInput
         style={tw('dark:text-white px-1.5 py-3 flex-1')}
+        autoCorrect={false}
+        returnKeyType="search"
+        spellCheck={false}
+        autoCapitalize="none"
         {...restProps}
         placeholderTextColor={color}
       />
