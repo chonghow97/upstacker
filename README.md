@@ -17,6 +17,8 @@
 # ENV
 
 please setup your own github access token in `.env`
+
 ```
 TOKEN = <YOUR GITHUB PERSONAL ACCESS TOKEN>
+DSN = <YOUR SENTRY DSN>
 ```
