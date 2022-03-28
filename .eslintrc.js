@@ -50,6 +50,7 @@ module.exports = {
       },
     ],
     'react/function-component-definition': 'off',
+    'no-extraneous-dependencies': 'off',
   },
   ignorePatterns: ['./src/**/*.js'],
 };

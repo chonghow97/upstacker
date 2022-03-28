@@ -4,7 +4,11 @@ import Text from 'components/Text';
 import ScrollTop from 'components/ScrollTop';
 import RepoList from 'components/RepoList';
 
+import {useTailwind} from 'tailwind-rn';
+
 const RepoListContainer = props => {
+  const tw = useTailwind();
+
   const {
     data,
     hasNextPage,
@@ -17,6 +21,8 @@ const RepoListContainer = props => {
     onEndReached,
     onRefresh,
   } = props;
+
+  const {color} = tw('text-black dark:text-white');
 
   const renderItem = ({item: items}) => {
     const renderList = ({item}) => {
@@ -43,7 +49,11 @@ const RepoListContainer = props => {
       <FlatList
         ref={flatListRef}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl
+            color={color}
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
         }
         onScrollEndDrag={() => setShow(true)}
         data={data?.pages}
