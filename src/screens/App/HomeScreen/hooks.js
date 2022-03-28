@@ -1,15 +1,17 @@
 import {useState, useCallback, useRef} from 'react';
 import {useInfiniteQuery} from 'react-query';
 import {fetchRepo} from 'apis';
-
+import {useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
-import {debounce} from 'util';
+
+const selectQuery = state => state.common.query;
 
 const useHooks = () => {
   // ============= STATE
   const {push} = useNavigation();
 
-  const [query, setQuery] = useState('');
+  const query = useSelector(selectQuery);
+
   const [show, setShow] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -32,7 +34,6 @@ const useHooks = () => {
   );
 
   // ============= ACTION
-  const onChange = debounce(value => setQuery(value), 1000);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -51,7 +52,6 @@ const useHooks = () => {
     push,
     refreshing,
     flatListRef,
-    onChange,
     onRefresh,
     onEndReached,
   };

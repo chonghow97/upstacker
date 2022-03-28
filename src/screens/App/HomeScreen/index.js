@@ -6,6 +6,9 @@ import Empty from 'components/Empty';
 import Screen from 'components/Screen';
 import EmptyIcon from 'asset/svg/empty.svg';
 import RepoListContainer from 'containers/RepoList';
+import {useSelector} from 'react-redux';
+
+const selectQuery = state => state.common.query;
 
 const HomeScreen = () => {
   const {
@@ -13,7 +16,6 @@ const HomeScreen = () => {
     push,
     isError,
     isSuccess,
-    onChange,
     onRefresh,
     isRefetching,
     ...repoProps
@@ -40,13 +42,9 @@ const HomeScreen = () => {
         />
       );
   };
+  const query = useSelector(selectQuery);
 
-  return (
-    <Screen>
-      <Input onChangeText={onChange} placeholder="Search" className="mb-5" />
-      {renderContent()}
-    </Screen>
-  );
+  return <Screen>{renderContent()}</Screen>;
 };
 
 export default HomeScreen;

@@ -4,9 +4,10 @@ import Text from 'components/Text';
 import View from 'components/View';
 import Screen from 'components/Screen';
 import {getUser} from 'redux/ducks/user';
-
 import {useDispatch, useSelector} from 'react-redux';
 import Counter from './Counter';
+
+const selectUser = state => state.user;
 
 const TestScreen = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,7 @@ const TestScreen = () => {
     dispatch(getUser());
   }, []);
 
-  const user = useSelector(state => state.user);
-
-  console.log(user);
+  const user = useSelector(selectUser);
 
   return (
     <Screen>
