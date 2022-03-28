@@ -12,7 +12,7 @@ import Counter from './Counter';
 const TestScreen = () => {
   const dispatch = useDispatch();
 
-  const counter = useSelector(state => state.counter.count);
+  const counter = useSelector(state => state.common.count);
   const voters = [
     'Anthony Sistilli',
     'Bob Smith',
