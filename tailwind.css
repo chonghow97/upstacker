@@ -26,6 +26,11 @@
   margin: 3.5rem
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem
@@ -35,12 +40,12 @@
   margin-top: 3rem
 }
 
-.-mt-1 {
-  margin-top: -0.25rem
-}
-
 .ml-3 {
   margin-left: 0.75rem
+}
+
+.-mt-1 {
+  margin-top: -0.25rem
 }
 
 .mr-1 {
@@ -59,6 +64,14 @@
   margin-bottom: 0.25rem
 }
 
+.mb-12 {
+  margin-bottom: 3rem
+}
+
+.ml-2 {
+  margin-left: 0.5rem
+}
+
 .flex {
   display: flex
 }
@@ -67,12 +80,8 @@
   height: 3rem
 }
 
-.h-20 {
-  height: 5rem
-}
-
-.h-32 {
-  height: 8rem
+.h-3 {
+  height: 0.75rem
 }
 
 .w-\[95\%\] {
@@ -81,6 +90,10 @@
 
 .w-12 {
   width: 3rem
+}
+
+.w-3 {
+  width: 0.75rem
 }
 
 .flex-1 {
@@ -132,6 +145,11 @@
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity))
 }
 
 .p-2 {

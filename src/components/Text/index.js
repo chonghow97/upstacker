@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const Text = ({children, className, text, style, ...restProps}) => {
   const tw = useTailwind();
 
-  const myStyle = tw(classNames('dark:text-white', className));
+  const myStyle = tw(classNames('text-black dark:text-white', className));
 
   return (
     <RNText style={[myStyle, style]} {...restProps}>
