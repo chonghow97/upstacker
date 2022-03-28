@@ -14,8 +14,9 @@
 - classnames
 - lodash
 
-# Demo
+# ENV
 
-
-https://user-images.githubusercontent.com/31228115/160053400-406bb404-7b7b-4662-bc25-1a8a7f66ff22.mp4
-
+please setup your own github access token in `.env`
+```
+TOKEN = <YOUR GITHUB PERSONAL ACCESS TOKEN>
+```
