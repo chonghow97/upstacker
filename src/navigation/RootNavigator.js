@@ -29,7 +29,6 @@ const RootNavigator = () => {
           name="test"
           options={{title: 'Test', headerShown: false}}
           component={TestScreen}
-          x
         />
         <Stack.Screen
           name="app"
@@ -37,7 +36,7 @@ const RootNavigator = () => {
             title: 'React Community',
             headerShown: true,
             headerTitle: Header,
-            headerStyle: tw('dark:bg-gray-800'),
+            headerStyle: [tw('dark:bg-gray-800')],
             headerTintColor: color,
           }}
           component={HomeScreen}

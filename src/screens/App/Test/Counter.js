@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button} from 'react-native';
 import {useDispatch} from 'react-redux';
-import {increment, decrement} from 'redux/ducks/counter';
+import {increment, decrement} from 'redux/ducks/common';
 import Text from 'components/Text';
 
 import View from 'components/View';
