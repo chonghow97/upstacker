@@ -1,7 +1,7 @@
-export const isIos = Platform.OS === 'ios';
+// export const isIos = Platform.OS === 'ios';
 
 export const debounce = (func, timeout = 300) => {
-  //src: https://www.freecodecamp.org/news/javascript-debounce-example/
+  // src: https://www.freecodecamp.org/news/javascript-debounce-example/
   let timer;
   return (...args) => {
     clearTimeout(timer);

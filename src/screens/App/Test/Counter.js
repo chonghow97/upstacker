@@ -23,7 +23,7 @@ const Counter = ({name}) => {
     <View className="my-3">
       <Text
         className="text-lg font-bold text-center"
-        text={name ? name : 'Anoymous'}
+        text={name || 'Anoymous'}
       />
       <Text
         className="text-lg font-bold text-center"

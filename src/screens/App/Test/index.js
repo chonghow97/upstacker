@@ -7,7 +7,7 @@ import {getUser} from 'redux/ducks/user';
 import {useDispatch, useSelector} from 'react-redux';
 import Counter from './Counter';
 
-const selectUser = state => state.user;
+// const selectUser = state => state.user;
 
 const TestScreen = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const TestScreen = () => {
     dispatch(getUser());
   }, []);
 
-  const user = useSelector(selectUser);
+  // const user = useSelector(selectUser);
 
   return (
     <Screen>

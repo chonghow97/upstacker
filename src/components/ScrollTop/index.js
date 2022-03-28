@@ -19,8 +19,6 @@ const ScrollTop = ({className, show, trigger, onPress, ...restProps}) => {
     ),
   );
 
-  const {color} = tw('text-gray-800 dark:text-gray-200');
-
   return (
     show && (
       <TouchableOpacity style={myStyle} onPress={onPressTop} {...restProps}>
