@@ -27,7 +27,7 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'no-console': 'off',
+    'no-console': 'warn',
     'func-names': 'off',
     'no-process-exit': 'off',
     'object-shorthand': 'off',
