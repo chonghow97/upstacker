@@ -4,7 +4,7 @@ import {useTailwind} from 'tailwind-rn';
 import classNames from 'classnames';
 import EmptyIcon from 'asset/svg/empty.svg';
 
-const Empty = ({icon, content, title, className, onPress, ...restProps}) => {
+const Empty = ({icon, content, title, className, ...restProps}) => {
   const tw = useTailwind();
 
   const myStyle = tw(classNames('flex justify-center items-center', className));

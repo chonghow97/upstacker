@@ -1,12 +1,11 @@
 import {View, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Github from 'asset/svg/github.svg';
 import SearchIcon from 'asset/svg/search.svg';
-import Search from './Search';
 import {useTailwind} from 'tailwind-rn';
-import {useState} from 'react';
+import Search from './Search';
 
-const Header = props => {
+const Header = () => {
   const tw = useTailwind();
   const [state, setState] = useState(false);
 

@@ -1,5 +1,4 @@
 import {api} from 'apis';
 
-export const requestGetUser = async () => {
-  return await api.get('/search/repositories?q=user:reactjs');
-};
+export const requestGetUser = async () =>
+  api.get('/search/repositories?q=user:reactjs');

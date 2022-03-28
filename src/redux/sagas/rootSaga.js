@@ -1,5 +1,5 @@
 import {takeLatest} from 'redux-saga/effects';
-import {handleGetUser, useHandleGetUser} from './handler/user';
+import {useHandleGetUser} from './handler/user';
 import {GET_USER} from '../ducks/user';
 
 export function* watcherSaga() {

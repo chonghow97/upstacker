@@ -25,8 +25,8 @@ const useHooks = () => {
     fetchRepo,
     {
       getNextPageParam: (lastPage, allPages) => {
-        const maxPage = lastPage?.total_count / 10;
-        const nextPage = allPages?.length + 1;
+        const maxPage = lastPage.total_count / 10 ?? 0;
+        const nextPage = allPages.length + 1 ?? 0;
 
         return nextPage <= maxPage ? nextPage : undefined;
       },

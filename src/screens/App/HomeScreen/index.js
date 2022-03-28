@@ -1,13 +1,10 @@
 import React from 'react';
-import useHooks from './hooks';
 import Text from 'components/Text';
 import Empty from 'components/Empty';
 import Screen from 'components/Screen';
 import EmptyIcon from 'asset/svg/empty.svg';
 import RepoListContainer from 'containers/RepoList';
-import {useSelector} from 'react-redux';
-
-const selectQuery = state => state.common.query;
+import useHooks from './hooks';
 
 const HomeScreen = () => {
   const {
@@ -40,8 +37,8 @@ const HomeScreen = () => {
           }
         />
       );
+    return null;
   };
-  const query = useSelector(selectQuery);
 
   return <Screen>{renderContent()}</Screen>;
 };

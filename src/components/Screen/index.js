@@ -3,7 +3,7 @@ import {SafeAreaView, View, FlatList} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import classNames from 'classnames';
 
-const isIos = Platform.OS === 'ios';
+// const isIos = Platform.OS === 'ios';
 
 export const Screen = props => {
   const {children, className, onScroll, ...restProps} = props;

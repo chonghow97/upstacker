@@ -11,8 +11,6 @@ import {useNavigation} from '@react-navigation/native';
 import {debounce} from 'util';
 import {useTailwind} from 'tailwind-rn';
 
-const TestScreen = () => {
-  return <Screen></Screen>;
-};
+const TestScreen = () => <Screen>{/* {Your shit here} */}</Screen>;
 
 export default TestScreen;

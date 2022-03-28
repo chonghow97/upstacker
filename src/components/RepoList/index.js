@@ -1,6 +1,5 @@
 import Text from 'components/Text';
-import {View} from 'react-native';
-import {TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import Repo from 'asset/svg/repo-icon.svg';
 

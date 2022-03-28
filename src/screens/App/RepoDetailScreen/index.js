@@ -9,14 +9,12 @@ import Repo from 'asset/svg/repo-icon.svg';
 import Fork from 'asset/svg/fork.svg';
 import {useTailwind} from 'tailwind-rn';
 
-const IconText = ({text, icon, color}) => {
-  return (
-    <View className="flex-row">
-      {icon || <Repo fill={color} />}
-      <Text className="ml-2">{text}</Text>
-    </View>
-  );
-};
+const IconText = ({text, icon, color}) => (
+  <View className="flex-row">
+    {icon || <Repo fill={color} />}
+    <Text className="ml-2">{text}</Text>
+  </View>
+);
 
 const RepoDetailScreen = ({route}) => {
   const tw = useTailwind();
@@ -26,7 +24,7 @@ const RepoDetailScreen = ({route}) => {
     params: {itemId},
   } = route;
 
-  const {loading, data, error, refetch} = useQuery(
+  const {loading, data} = useQuery(
     ['getRepoDetail', {id: itemId}],
     getRepoDetail,
   );
