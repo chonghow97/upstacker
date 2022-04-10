@@ -84,11 +84,6 @@
 			"marginBottom": 4
 		}
 	},
-	"mb-12": {
-		"style": {
-			"marginBottom": 48
-		}
-	},
 	"ml-2": {
 		"style": {
 			"marginLeft": 8
@@ -99,6 +94,11 @@
 			"display": "flex"
 		}
 	},
+	"h-1": {
+		"style": {
+			"height": 4
+		}
+	},
 	"h-12": {
 		"style": {
 			"height": 48
@@ -107,6 +107,11 @@
 	"h-3": {
 		"style": {
 			"height": 12
+		}
+	},
+	"h-20": {
+		"style": {
+			"height": 80
 		}
 	},
 	"w-[95%]": {

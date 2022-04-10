@@ -13,7 +13,7 @@ const RepoList = ({title, description, ...restProps}) => {
   return (
     <TouchableOpacity
       style={tw(
-        'border dark:border-0 dark:bg-gray-800 px-3 pt-1.5 pb-3 mb-5 rounded',
+        'h-20 border dark:border-0 dark:bg-gray-800 px-3 pt-1.5 pb-3 mb-5 rounded',
       )}
       {...restProps}>
       <Text
@@ -31,6 +31,7 @@ const RepoList = ({title, description, ...restProps}) => {
         />
       </View>
       <Text
+        numberOfLines={2}
         className="text-sm text-gray-600 dark:text-gray-200"
         text={description || 'No Description'}
       />
