@@ -29,7 +29,14 @@ const RepoDetailScreen = ({route}) => {
     getRepoDetail,
   );
 
-  if (loading) return <Text text="Loading..." />;
+  if (loading || !data)
+    return (
+      <Screen>
+        <View className="px-3">
+          <Text text="Loading..." />
+        </View>
+      </Screen>
+    );
 
   return (
     <Screen>
