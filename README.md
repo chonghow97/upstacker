@@ -1,25 +1,24 @@
 # Upstacker
 
-Upstacker is a web application designed to help users manage and organize their tasks effectively. The application provides a clean and intuitive interface, enabling users to create, update, and delete tasks with ease. With Upstacker, users can prioritize their tasks, set deadlines, and keep track of their progress.
+Upstacker is a dynamic and intuitive application designed to simplify the management of development stacks for teams. Built with React Native, this app empowers users to create, customize, and share their technology stacks, fostering collaboration and knowledge sharing among developers.
 
 ## Features
 
-- **User Authentication**: Secure user registration and login functionality.
-- **Task Management**: Create, edit, and delete tasks with customizable properties (title, description, deadline, priority).
-- **Responsive Design**: Fully responsive interface for a seamless experience on various devices.
-- **Data Persistence**: Tasks are stored in a database, ensuring data is saved across sessions.
-- **Real-time Updates**: Changes to tasks are reflected in real-time for all users.
+- **User-Friendly Interface:** Enjoy a clean and responsive design that enhances the user experience across both iOS and Android platforms.
+- **Stack Customization:** Easily add, edit, and delete technology stacks tailored to your projects or preferences.
+- **Real-Time Collaboration:** Work seamlessly with multiple users, making it ideal for team environments.
+- **Share Functionality:** Share your stacks with others via links, encouraging community engagement and feedback.
+- **Offline Access:** Utilize the app's functionality even without an internet connection to ensure productivity at all times.
 
 ## Technologies Used
 
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Authentication**: JWT (JSON Web Tokens)
+- **React Native:** For cross-platform mobile app development.
+- **Firebase:** For real-time database and user authentication.
+- **Redux:** For efficient state management.
 
 ## Installation
 
-To get a local copy of Upstacker up and running, follow these steps:
+To get started with Upstacker, follow these steps:
 
 1. Clone the repository:
    ```bash
