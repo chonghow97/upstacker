@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    '@react-native',
     'plugin:react/recommended',
     'airbnb',
     'prettier',
