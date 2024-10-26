@@ -17,11 +17,11 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="app">
-        <Stack.Screen
+        {/* <Stack.Screen
           name="test"
           options={{title: 'Test', headerShown: false}}
           component={TestScreen}
-        />
+        /> */}
         <Stack.Screen
           name="app"
           options={{
@@ -31,9 +31,9 @@ const RootNavigator = () => {
             headerStyle: [tw('dark:bg-gray-800')],
             headerTintColor: color,
           }}
-          component={HomeScreen}
+          component={TestScreen}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="repoDetail"
           component={RepoDetailScreen}
           options={{
@@ -43,7 +43,7 @@ const RootNavigator = () => {
             headerStyle: tw('dark:bg-gray-800'),
             headerTintColor: color,
           }}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
