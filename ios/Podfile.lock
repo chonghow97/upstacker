@@ -1521,14 +1521,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNSentry (3.4.3):
-    - React-Core
-    - Sentry (= 7.11.0)
   - RNSVG (12.5.1):
     - React-Core
-  - Sentry (7.11.0):
-    - Sentry/Core (= 7.11.0)
-  - Sentry/Core (7.11.0)
   - SocketRocket (0.7.0)
   - Yoga (0.0.0)
 
@@ -1598,13 +1592,11 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
-    - Sentry
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1735,8 +1727,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  RNSentry:
-    :path: "../node_modules/@sentry/react-native"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   Yoga:
@@ -1806,9 +1796,7 @@ SPEC CHECKSUMS:
   ReactCodegen: 4bcb34e6b5ebf6eef5cee34f55aa39991ea1c1f1
   ReactCommon: 6a952e50c2a4b694731d7682aaa6c79bc156e4ad
   RNScreens: 19719a9c326e925498ac3b2d35c4e50fe87afc06
-  RNSentry: 85f6525b5fe8d2ada065858026b338605b3c09da
   RNSVG: d7d7bc8229af3842c9cfc3a723c815a52cdd1105
-  Sentry: 0c5cd63d714187b4a39c331c1f0eb04ba7868341
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 055f92ad73f8c8600a93f0e25ac0b2344c3b07e6
 
