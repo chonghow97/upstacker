@@ -4,6 +4,7 @@ import Empty from 'components/Empty';
 import Screen from 'components/Screen';
 import EmptyIcon from 'asset/svg/empty.svg';
 import RepoListContainer from 'containers/RepoList';
+import {ActivityIndicator} from 'react-native';
 import useHooks from './hooks';
 
 const HomeScreen = () => {
@@ -22,7 +23,15 @@ const HomeScreen = () => {
       return (
         <RepoListContainer {...repoProps} onRefresh={onRefresh} push={push} />
       );
-    if (isLoading || isRefetching) return <Empty />;
+    if (isLoading || isRefetching) {
+      return (
+        <Empty
+          icon={<EmptyIcon width={300} height={350} />}
+          title="Loading"
+          content={<ActivityIndicator size="large" />}
+        />
+      );
+    }
     if (isError)
       return (
         <Empty
