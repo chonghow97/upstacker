@@ -2,7 +2,7 @@
 -> V20.12.2
 
 # Preview
-https://github.com/user-attachments/assets/882d7da0-07d1-42cb-b850-1eb4c08a7271
+https://github.com/user-attachments/assets/bfbfe581-5493-4bf8-9028-c6c943a3cf84
 
 # Upstacker
 
