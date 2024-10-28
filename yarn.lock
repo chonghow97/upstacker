@@ -3328,7 +3328,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/native-stack@npm:^6.6.1":
+"@react-navigation/native-stack@npm:^6.11.0":
   version: 6.11.0
   resolution: "@react-navigation/native-stack@npm:6.11.0"
   dependencies:
@@ -12665,7 +12665,7 @@ __metadata:
     "@react-native/metro-config": 0.76.0
     "@react-native/typescript-config": 0.76.0
     "@react-navigation/native": ^6.0.10
-    "@react-navigation/native-stack": ^6.6.1
+    "@react-navigation/native-stack": ^6.11.0
     "@types/react": ^18.2.6
     "@types/react-test-renderer": ^18.0.0
     axios: ^0.26.1
