@@ -1,12 +1,14 @@
 # NodeJS version
+
 -> V20.12.2
 
 # Preview
+
 https://github.com/user-attachments/assets/bfbfe581-5493-4bf8-9028-c6c943a3cf84
 
 # Upstacker
 
-Upstacker is a **React Native** mobile application that connects to the **GitHub API** to retrieve and display repository data.
+Upstacker is a **React Native** mobile application that connects to the **GitHub API** to retrieve and display **reactJS** repository data.
 
 ## Features
 
