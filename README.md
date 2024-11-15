@@ -3,9 +3,13 @@
 -> V20.12.2
 
 # Preview
+
 ## IOS
+
 https://github.com/user-attachments/assets/bfbfe581-5493-4bf8-9028-c6c943a3cf84
+
 ## Android
+
 ![Screenshot_1731664042](https://github.com/user-attachments/assets/b88a9439-5682-43d1-82aa-257b9e8aa439)
 
 # Upstacker
@@ -14,7 +18,7 @@ Upstacker is a **React Native** mobile application that connects to the **GitHub
 
 ## Features
 
-- Retrieves and displays GitHub repository data interactively
+- Retrieves and displays GitHub **reactJS** repository data interactively
 - Smooth navigation and custom styling for enhanced user experience
 
 ## Tech Stack
