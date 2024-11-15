@@ -3,8 +3,10 @@
 -> V20.12.2
 
 # Preview
-
+## IOS
 https://github.com/user-attachments/assets/bfbfe581-5493-4bf8-9028-c6c943a3cf84
+## Android
+![Screenshot_1731664042](https://github.com/user-attachments/assets/b88a9439-5682-43d1-82aa-257b9e8aa439)
 
 # Upstacker
 
