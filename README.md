@@ -32,7 +32,7 @@ Upstacker is a **React Native** mobile application that connects to the **GitHub
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/upstacker.git
+   git clone https://github.com/chonghow97/upstacker.git
    cd upstacker
    ```
 
