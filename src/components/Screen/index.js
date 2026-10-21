@@ -1,28 +1,23 @@
 import React from 'react';
-import {SafeAreaView, View, FlatList} from 'react-native';
-import {useTailwind} from 'tailwind-rn';
-import classNames from 'classnames';
-
-// const isIos = Platform.OS === 'ios';
+import { SafeAreaView, View, FlatList } from 'react-native';
 
 export const Screen = props => {
-  const {children, className, onScroll, ...restProps} = props;
-  const tw = useTailwind();
+  const { children, className, onScroll, ...restProps } = props;
 
-  const myStyle = tw(
-    classNames('flex flex-1 bg-white dark:bg-black', className),
-  );
+  // 🚀 确保底色是 bg-white，在暗黑模式下是 bg-black
+  const combinedClassName = `flex-1 bg-white dark:bg-black ${className || ''}`.trim();
 
   return (
-    <SafeAreaView style={myStyle} {...restProps}>
+    <SafeAreaView className={combinedClassName} {...restProps}>
       {onScroll ? (
         <FlatList
           ListHeaderComponent={
-            <View style={tw('pt-3 px-1.5')}>{children}</View>
+            <View className="pt-3 px-1.5 flex-1">{children}</View>
           }
         />
       ) : (
-        <View style={tw('pt-3 px-1.5')}>{children}</View>
+        // 🚀 内部容器也必须 flex-1 撑满
+        <View className="pt-3 px-1.5 flex-1">{children}</View>
       )}
     </SafeAreaView>
   );

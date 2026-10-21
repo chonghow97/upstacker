@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {TouchableOpacity} from 'react-native';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { TouchableOpacity } from 'react-native';
 
-import {setQuery} from 'redux/ducks/common';
+import { setQuery } from 'redux/ducks/common';
 import ArrowLeft from 'asset/svg/arrowLeft.svg';
 
-import {debounce} from 'util';
+import { debounce } from 'util';
 import Input from '../Input';
 
-const Search = ({onPress, color}) => {
+const Search = ({ onPress }) => {
   const dispatch = useDispatch();
 
   const onChangeText = debounce(e => dispatch(setQuery(e)), 1000);
@@ -23,7 +23,7 @@ const Search = ({onPress, color}) => {
   return (
     <>
       <TouchableOpacity onPress={onPress}>
-        <ArrowLeft fill={color} />
+        <ArrowLeft />
       </TouchableOpacity>
       <Input onChangeText={onChangeText} className="flex-1 ml-3" />
     </>

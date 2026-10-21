@@ -26,7 +26,7 @@ Upstacker is a **React Native** mobile application that connects to the **GitHub
 - **React Native**
 - **Redux** and **Redux-Saga** for state management
 - **React-Query** for data fetching
-- **tailwind-rn** for styling with Tailwind CSS
+- **NativeWind** for styling with Tailwind CSS
 - **React Native Navigation**
 - **React Native SVG** for vector graphics
 - **Classnames** and **Lodash** for utility functions

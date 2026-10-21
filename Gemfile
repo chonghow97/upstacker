@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+require 'logger'
+
 
 # You may use http://rbenv.org/ or https://rvm.io/ to install and use this version
 ruby ">= 2.6.10"

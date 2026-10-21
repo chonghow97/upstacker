@@ -1,14 +1,10 @@
 import React from 'react';
-import {FlatList, RefreshControl} from 'react-native';
+import { FlatList, RefreshControl } from 'react-native';
 import Text from 'components/Text';
 import ScrollTop from 'components/ScrollTop';
 import RepoList from 'components/RepoList';
 
-import {useTailwind} from 'tailwind-rn';
-
 const RepoListContainer = props => {
-  const tw = useTailwind();
-
   const {
     data,
     hasNextPage,
@@ -22,12 +18,10 @@ const RepoListContainer = props => {
     onRefresh,
   } = props;
 
-  const {color} = tw('text-black dark:text-white');
-
-  const renderItem = ({item: items}) => {
-    const renderList = ({item}) => {
+  const renderItem = ({ item: items }) => {
+    const renderList = ({ item }) => {
       const onPress = () => {
-        push('repoDetail', {itemId: item?.name});
+        push('repoDetail', { itemId: item?.name });
       };
 
       return (
@@ -40,7 +34,7 @@ const RepoListContainer = props => {
     };
 
     return (
-      <FlatList data={items?.items} key={i => i.id} renderItem={renderList} />
+      <FlatList data={items?.items} keyExtractor={i => i.id.toString()} renderItem={renderList} />
     );
   };
 
@@ -50,7 +44,6 @@ const RepoListContainer = props => {
         ref={flatListRef}
         refreshControl={
           <RefreshControl
-            color={color}
             refreshing={refreshing}
             onRefresh={onRefresh}
           />

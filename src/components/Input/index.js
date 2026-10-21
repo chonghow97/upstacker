@@ -1,33 +1,23 @@
-import {TextInput, View} from 'react-native';
+import { TextInput, View } from 'react-native';
 import React from 'react';
-import {useTailwind} from 'tailwind-rn';
-import classNames from 'classnames';
 import Repo from 'asset/svg/search.svg';
 
-const Input = ({className, ...restProps}) => {
-  const tw = useTailwind();
+const Input = ({ className, ...restProps }) => {
+  const combinedClassName = `flex-row items-center px-1.5 bg-gray-300 rounded dark:bg-transparent dark:border-white dark:border ${className || ''}`.trim();
 
-  const myStyle = tw(
-    classNames(
-      'flex-row items-center px-1.5 bg-gray-300 rounded dark:bg-transparent dark:border-white dark:border',
-      className,
-    ),
-  );
-
-  const {color} = tw('text-gray-800 dark:text-gray-200');
-
+  // 定义 SVG 和 placeholder 的色值类（由 NativeWind 处理）
+  // 提示：NativeWind v4 推荐对 SVG 使用 className 配合 fill-current，或者直接传递 color 属性
   return (
-    <View style={myStyle}>
-      <Repo fill={color} style={tw('p-2 mr-1')} />
-
+    <View className={combinedClassName}>
+      <Repo style={{ marginRight: 4 }} width={16} height={16} />
       <TextInput
-        style={tw('dark:text-white px-1.5 py-3 flex-1')}
+        className="dark:text-white px-1.5 py-3 flex-1"
         autoCorrect={false}
         returnKeyType="search"
         spellCheck={false}
         autoCapitalize="none"
+        placeholderTextColor="#8e8e93" // 建议通过具体的规范色值控制
         {...restProps}
-        placeholderTextColor={color}
       />
     </View>
   );

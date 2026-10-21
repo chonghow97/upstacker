@@ -9,7 +9,7 @@ import RepoList from 'containers/RepoList';
 import ScrollTop from 'components/ScrollTop';
 import {useNavigation} from '@react-navigation/native';
 import {debounce} from 'util';
-import {useTailwind} from 'tailwind-rn';
+
 
 const TestScreen = () => <Screen>{/* {Your shit here} */}</Screen>;
 

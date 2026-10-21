@@ -1,5 +1,0 @@
-@tailwind utilities;
-
-.text {
-  @apply text-black dark:text-white;
-}

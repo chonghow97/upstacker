@@ -3,23 +3,21 @@ import HomeScreen from 'screens/App/HomeScreen';
 import TestScreen from 'screens/App/Test';
 import RepoDetailScreen from 'screens/App/RepoDetailScreen';
 import Header from 'components/Header';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import {useTailwind} from 'tailwind-rn';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useColorScheme } from 'react-native'; // 🚀 1. 引入原生的颜色模式 Hook
 
 const RootNavigator = () => {
-  const tw = useTailwind();
-  const {color} = tw('text-black dark:text-white');
-
   const Stack = createNativeStackNavigator();
+  const colorScheme = useColorScheme(); // 🚀 2. 获取当前的系统外观主题 ('light' 或 'dark')
+  const isDark = colorScheme === 'dark';
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="app">
         <Stack.Screen
           name="test"
-          options={{title: 'Test', headerShown: false}}
+          options={{ title: 'Test', headerShown: false }}
           component={TestScreen}
         />
         <Stack.Screen
@@ -27,9 +25,12 @@ const RootNavigator = () => {
           options={{
             title: 'React Community',
             headerShown: true,
-            headerTitle: Header,
-            headerStyle: [tw('dark:bg-gray-800')],
-            headerTintColor: color,
+            headerTitle: () => <Header />, // 🚀 3. 改为函数式渲染，防止 Header 类匹配报错
+            headerStyle: {
+              // 🚀 4. 使用纯原生色值控制 header 背景，完美响应暗黑模式！
+              backgroundColor: isDark ? '#1f2937' : '#ffffff', 
+            },
+            headerTintColor: isDark ? '#ffffff' : '#000000',
           }}
           component={HomeScreen}
         />
@@ -40,8 +41,10 @@ const RootNavigator = () => {
             title: '',
             fullScreenGestureEnabled: true,
             headerShown: true,
-            headerStyle: tw('dark:bg-gray-800'),
-            headerTintColor: color,
+            headerStyle: {
+              backgroundColor: isDark ? '#1f2937' : '#ffffff',
+            },
+            headerTintColor: isDark ? '#ffffff' : '#000000',
           }}
         />
       </Stack.Navigator>

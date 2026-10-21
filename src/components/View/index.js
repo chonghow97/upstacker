@@ -1,14 +1,9 @@
 import React from 'react';
-import {View as RNView} from 'react-native';
-import {useTailwind} from 'tailwind-rn';
-import classNames from 'classnames';
+import { View as RNView } from 'react-native';
 
-const View = ({className, ...restProps}) => {
-  const tw = useTailwind();
-
-  const myStyle = tw(classNames('', className));
-
-  return <RNView style={myStyle} {...restProps} />;
+const View = ({ className, style, ...restProps }) => {
+  // 直接通过 className 透传，NativeWind 会在底层处理 RNView 的 className
+  return <RNView className={className} style={style} {...restProps} />;
 };
 
 export default View;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity as O, Text} from 'react-native';
-import {useTailwind} from 'tailwind-rn';
+import {useTailwind} from 'nativewind';
 import classNames from 'classnames';
 
 export const ToucableOpacity = ({item, className, style, ...restProps}) => {

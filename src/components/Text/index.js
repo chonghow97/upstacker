@@ -1,15 +1,12 @@
-import {Text as RNText} from 'react-native';
+import { Text as RNText } from 'react-native';
 import React from 'react';
-import {useTailwind} from 'tailwind-rn';
-import classNames from 'classnames';
 
-const Text = ({children, className, text, style, ...restProps}) => {
-  const tw = useTailwind();
-
-  const myStyle = tw(classNames('text-black dark:text-white', className));
+const Text = ({ children, className, text, style, ...restProps }) => {
+  // 合并默认样式与传入样式，默认自带 'text-black dark:text-white'
+  const combinedClassName = `text-black dark:text-white ${className || ''}`.trim();
 
   return (
-    <RNText style={[myStyle, style]} {...restProps}>
+    <RNText className={combinedClassName} style={style} {...restProps}>
       {text || children}
     </RNText>
   );

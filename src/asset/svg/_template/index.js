@@ -1,6 +1,6 @@
 import React from 'react';
 import {View as RNView} from 'react-native';
-import {useTailwind} from 'tailwind-rn';
+import {useTailwind} from 'nativewind';
 import classNames from 'classnames';
 
 const View = ({className, ...restProps}) => {
