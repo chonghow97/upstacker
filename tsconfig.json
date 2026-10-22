@@ -1,4 +1,47 @@
 {
-    "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    // Mirrors the module-resolver aliases in babel.config.js
+    "paths": {
+      "apis": [
+        "./src/apis"
+      ],
+      "App": [
+        "./src/App"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "containers/*": [
+        "./src/containers/*"
+      ],
+      "navigation/*": [
+        "./src/navigation/*"
+      ],
+      "@redux/*": [
+        "./src/redux/*"
+      ],
+      "screens/*": [
+        "./src/screens/*"
+      ],
+      "theme/*": [
+        "./src/theme/*"
+      ],
+      "util": [
+        "./src/util"
+      ],
+      "asset/*": [
+        "./src/asset/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/Pods"
+  ]
 }
-  

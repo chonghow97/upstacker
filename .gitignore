@@ -75,3 +75,6 @@ yarn-error.log
 
 #env
 .env
+
+# Kotlin (RN 0.80+ template)
+.kotlin/

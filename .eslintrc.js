@@ -53,5 +53,16 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-extraneous-dependencies': 'off',
   },
-  ignorePatterns: ['./src/**/*.js'],
+  overrides: [
+    {
+      // TypeScript sources (src/ was converted from JS). Optional props are typed with `?` instead of defaultProps,
+      // and the base no-unused-vars rule misreads parameter names inside function types.
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'react/require-default-props': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['warn', {varsIgnorePattern: '^_', argsIgnorePattern: '^_'}],
+      },
+    },
+  ],
 };

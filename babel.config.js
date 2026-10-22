@@ -1,20 +1,22 @@
 module.exports = {
   presets: [
-    'module:@react-native/babel-preset', 
-    'nativewind/babel' // 🚀 NativeWind 预设
+    'module:@react-native/babel-preset',
+    // NativeWind's preset also adds the Reanimated 4 / Worklets plugin, so it must not be listed again below
+    'nativewind/babel',
   ],
   plugins: [
     [
-      'module-resolver', // 🚀 1. 路径别名解析
+      'module-resolver',
       {
         root: ['./src'],
+        extensions: ['.ios.ts', '.android.ts', '.ts', '.ios.tsx', '.android.tsx', '.tsx', '.js', '.jsx', '.json'],
         alias: {
           apis: './src/apis',
           App: './src/App',
           components: './src/components',
           containers: './src/containers',
           navigation: './src/navigation',
-          '@redux': './src/redux', 
+          '@redux': './src/redux',
           screens: './src/screens',
           theme: './src/theme',
           util: './src/util',
@@ -23,16 +25,13 @@ module.exports = {
       },
     ],
     [
-      'module:react-native-dotenv', // 🚀 2. 核心修复：注入环境变量插件支持 '@env' 导入
+      'module:react-native-dotenv',
       {
         moduleName: '@env',
         path: '.env',
-        blacklist: null,
-        whitelist: null,
         safe: false,
         allowUndefined: true,
       },
     ],
-    'react-native-reanimated/plugin', // 🚀 3. Reanimated 插件（必须放在最后）
   ],
 };
