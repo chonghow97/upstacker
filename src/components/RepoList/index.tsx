@@ -1,4 +1,4 @@
-import {View, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import type {TouchableOpacityProps} from 'react-native';
 import React from 'react';
 import Text from 'components/Text';
@@ -9,6 +9,10 @@ export interface Props extends TouchableOpacityProps {
   title?: string;
   description?: string | null;
 }
+
+const styles = StyleSheet.create({
+  icon: {marginRight: 8},
+});
 
 const RepoList = ({title, description, className, ...restProps}: Props) => {
   const iconColor = useIconColor();
@@ -24,7 +28,7 @@ const RepoList = ({title, description, className, ...restProps}: Props) => {
       />
 
       <View className="flex-row items-center">
-        <Repo color={iconColor} style={{marginRight: 8}} />
+        <Repo color={iconColor} style={styles.icon} />
         <Text
           numberOfLines={1}
           className="text-lg font-bold dark:text-blue-500 mb-1"

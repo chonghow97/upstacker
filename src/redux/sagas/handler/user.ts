@@ -9,6 +9,7 @@ export function* useHandleGetUser() {
     const {data} = response;
     yield put(setUser(data));
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 }

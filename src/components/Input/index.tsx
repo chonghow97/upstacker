@@ -1,8 +1,12 @@
-import {TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import type {TextInputProps} from 'react-native';
 import React from 'react';
 import Repo from 'asset/svg/search.svg';
 import {useIconColor} from 'theme';
+
+const styles = StyleSheet.create({
+  icon: {marginRight: 4},
+});
 
 const Input = ({className, ...restProps}: TextInputProps) => {
   const iconColor = useIconColor();
@@ -13,7 +17,7 @@ const Input = ({className, ...restProps}: TextInputProps) => {
   // 提示：NativeWind v4 推荐对 SVG 使用 className 配合 fill-current，或者直接传递 color 属性
   return (
     <View className={combinedClassName}>
-      <Repo style={{marginRight: 4}} width={16} height={16} color={iconColor} />
+      <Repo style={styles.icon} width={16} height={16} color={iconColor} />
       <TextInput
         className="dark:text-white px-1.5 py-3 flex-1"
         autoCorrect={false}

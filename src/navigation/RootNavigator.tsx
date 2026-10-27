@@ -10,6 +10,8 @@ import type {RootStackParamList} from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+const renderHeaderTitle = () => <Header />;
+
 const RootNavigator = () => {
   const colorScheme = useColorScheme(); // 🚀 2. 获取当前的系统外观主题 ('light' 或 'dark')
   const isDark = colorScheme === 'dark';
@@ -27,7 +29,7 @@ const RootNavigator = () => {
           options={{
             title: 'React Community',
             headerShown: true,
-            headerTitle: () => <Header />, // 🚀 3. 改为函数式渲染，防止 Header 类匹配报错
+            headerTitle: renderHeaderTitle, // 🚀 3. 改为函数式渲染，防止 Header 类匹配报错
             headerStyle: {
               // 🚀 4. 使用纯原生色值控制 header 背景，完美响应暗黑模式！
               backgroundColor: isDark ? '#1f2937' : '#ffffff',

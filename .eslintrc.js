@@ -55,6 +55,13 @@ module.exports = {
   },
   overrides: [
     {
+      // Root config/setup files run in Node; jest.mock factories must require() inline.
+      files: ['*.config.js', 'jest.setup.js'],
+      rules: {
+        'global-require': 'off',
+      },
+    },
+    {
       // TypeScript sources (src/ was converted from JS). Optional props are typed with `?` instead of defaultProps,
       // and the base no-unused-vars rule misreads parameter names inside function types.
       files: ['*.ts', '*.tsx'],
