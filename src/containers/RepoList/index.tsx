@@ -1,12 +1,12 @@
 import React from 'react';
-import { FlatList, RefreshControl } from 'react-native';
-import type { ListRenderItem } from 'react-native';
-import type { InfiniteData } from '@tanstack/react-query';
+import {FlatList, RefreshControl} from 'react-native';
+import type {ListRenderItem} from 'react-native';
+import type {InfiniteData} from '@tanstack/react-query';
 import Text from 'components/Text';
 import ScrollTop from 'components/ScrollTop';
 import RepoList from 'components/RepoList';
-import type { Repo, RepoSearchResult } from 'apis';
-import type { RootStackNavigation } from 'navigation/types';
+import type {Repo, RepoSearchResult} from 'apis';
+import type {RootStackNavigation} from 'navigation/types';
 
 export interface Props {
   data?: InfiniteData<RepoSearchResult>;
@@ -35,10 +35,10 @@ const RepoListContainer = (props: Props) => {
     onRefresh,
   } = props;
 
-  const renderItem: ListRenderItem<RepoSearchResult> = ({ item: items }) => {
-    const renderList: ListRenderItem<Repo> = ({ item }) => {
+  const renderItem: ListRenderItem<RepoSearchResult> = ({item: items}) => {
+    const renderList: ListRenderItem<Repo> = ({item}) => {
       const onPress = () => {
-        push('repoDetail', { itemId: item?.name });
+        push('repoDetail', {itemId: item?.name});
       };
 
       return (
@@ -51,7 +51,11 @@ const RepoListContainer = (props: Props) => {
     };
 
     return (
-      <FlatList data={items?.items} keyExtractor={i => i.id.toString()} renderItem={renderList} />
+      <FlatList
+        data={items?.items}
+        keyExtractor={i => i.id.toString()}
+        renderItem={renderList}
+      />
     );
   };
 
@@ -60,10 +64,7 @@ const RepoListContainer = (props: Props) => {
       <FlatList
         ref={flatListRef}
         refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-          />
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         onScrollEndDrag={() => setShow(true)}
         data={data?.pages}
@@ -73,8 +74,8 @@ const RepoListContainer = (props: Props) => {
             {isFetchingNextPage
               ? 'Loading more...'
               : hasNextPage
-              ? 'Load More'
-              : 'Nothing more to load'}
+                ? 'Load More'
+                : 'Nothing more to load'}
           </Text>
         }
         onEndReached={onEndReached}

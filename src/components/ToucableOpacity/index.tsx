@@ -9,7 +9,12 @@ export interface Props extends TouchableOpacityProps {
 }
 
 // NativeWind v4 removed useTailwind(); className is passed straight through instead
-export const ToucableOpacity = ({item, className, style, ...restProps}: Props) => (
+export const ToucableOpacity = ({
+  item,
+  className,
+  style,
+  ...restProps
+}: Props) => (
   <O
     {...restProps}
     className={classNames('border px-1.5 py-3 mb-5 rounded', className)}

@@ -5,6 +5,7 @@ import {TOKEN} from '@env';
 axios.defaults.baseURL = 'https://api.github.com/';
 axios.defaults.headers.common['user-Agent'] = 'request';
 axios.defaults.headers.common.Authorization = `token ${TOKEN}`;
+console.log(TOKEN);
 
 export const api = axios;
 
@@ -24,7 +25,10 @@ export interface RepoSearchResult {
   items: Repo[];
 }
 
-export type FetchRepoKey = readonly ['fetch-repo', {per_page: number; query: string}];
+export type FetchRepoKey = readonly [
+  'fetch-repo',
+  {per_page: number; query: string},
+];
 export type RepoDetailKey = readonly ['getRepoDetail', {id: string}];
 
 export const fetchRepo = async ({

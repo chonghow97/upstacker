@@ -38,24 +38,18 @@ const HomeScreen = () => {
           icon={<EmptyIcon width={300} height={350} />}
           title="Alamak"
           content={
-<>
-<Text className="text-3xl font-extrabold text-red-500 bg-yellow-100">
-  NativeWind 测试成功！
-</Text>
-           <Text
+            <Text
               onPress={onRefresh}
               className="text-xs text-center font-bold"
               text="Something went wrong while displaying"
             />
-</>
- 
           }
         />
       );
     return null;
   };
 
-  return <Screen>{renderContent()}</Screen>;
+  return <Screen edges={['left', 'right', 'bottom']}>{renderContent()}</Screen>;
 };
 
 export default HomeScreen;

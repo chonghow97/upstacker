@@ -1,5 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import {combineReducers, legacy_createStore as createStore, applyMiddleware} from 'redux';
+import {
+  combineReducers,
+  legacy_createStore as createStore,
+  applyMiddleware,
+} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import commonReducer from './ducks/common';
 import userReducer from './ducks/user';

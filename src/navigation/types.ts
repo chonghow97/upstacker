@@ -1,4 +1,7 @@
-import type {NativeStackNavigationProp, NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
 // Routes registered in RootNavigator and their params
 export type RootStackParamList = {
@@ -7,9 +10,7 @@ export type RootStackParamList = {
   repoDetail: {itemId: string};
 };
 
-export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<
-  RootStackParamList,
-  T
->;
+export type RootStackScreenProps<T extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, T>;
 
 export type RootStackNavigation = NativeStackNavigationProp<RootStackParamList>;

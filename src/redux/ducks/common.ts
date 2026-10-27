@@ -21,7 +21,10 @@ const initialState: CommonState = {
   query: '',
 };
 
-export default (state: CommonState = initialState, action: CommonAction): CommonState => {
+export default (
+  state: CommonState = initialState,
+  action: CommonAction,
+): CommonState => {
   switch (action.type) {
     case INCREMENT:
       return {...state, count: state.count + 1};

@@ -61,7 +61,10 @@ module.exports = {
       rules: {
         'react/require-default-props': 'off',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['warn', {varsIgnorePattern: '^_', argsIgnorePattern: '^_'}],
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
+        ],
       },
     },
   ],

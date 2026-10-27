@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
-import { cssInterop } from 'nativewind';
+import {View, FlatList} from 'react-native';
+import {cssInterop} from 'nativewind';
 // react-native's own SafeAreaView is deprecated (and iOS-only); Android draws edge-to-edge since RN 0.80
-import { SafeAreaView } from 'react-native-safe-area-context';
-import type { NativeSafeAreaViewProps } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import type {NativeSafeAreaViewProps} from 'react-native-safe-area-context';
 
 // NativeWind only maps className -> style for core components; third-party views must be registered
-cssInterop(SafeAreaView, { className: 'style' });
+cssInterop(SafeAreaView, {className: 'style'});
 
 export interface Props extends NativeSafeAreaViewProps {
   className?: string;
@@ -15,10 +15,11 @@ export interface Props extends NativeSafeAreaViewProps {
 }
 
 export const Screen = (props: Props) => {
-  const { children, className, onScroll, ...restProps } = props;
+  const {children, className, onScroll, ...restProps} = props;
 
   // 🚀 确保底色是 bg-white，在暗黑模式下是 bg-black
-  const combinedClassName = `flex-1 bg-white dark:bg-black ${className || ''}`.trim();
+  const combinedClassName =
+    `flex-1 bg-white dark:bg-black ${className || ''}`.trim();
 
   return (
     <SafeAreaView className={combinedClassName} {...restProps}>

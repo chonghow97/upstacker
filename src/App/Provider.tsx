@@ -11,9 +11,7 @@ const queryClient = new QueryClient();
 const Provider = ({children}: PropsWithChildren) => (
   <SafeAreaProvider>
     <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        {children}
-      </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ReduxProvider>
   </SafeAreaProvider>
 );

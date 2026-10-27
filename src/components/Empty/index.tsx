@@ -1,5 +1,5 @@
-import { View, Text } from 'react-native';
-import type { ViewProps } from 'react-native';
+import {View, Text} from 'react-native';
+import type {ViewProps} from 'react-native';
 import React from 'react';
 import EmptyIcon from 'asset/svg/empty.svg';
 
@@ -9,8 +9,9 @@ export interface Props extends ViewProps {
   title?: string;
 }
 
-const Empty = ({ icon, content, title, className, ...restProps }: Props) => {
-  const combinedClassName = `flex justify-center items-center ${className || ''}`.trim();
+const Empty = ({icon, content, title, className, ...restProps}: Props) => {
+  const combinedClassName =
+    `flex justify-center items-center ${className || ''}`.trim();
 
   return (
     <View className={combinedClassName} {...restProps}>

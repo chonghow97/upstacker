@@ -3,10 +3,10 @@ import HomeScreen from 'screens/App/HomeScreen';
 import TestScreen from 'screens/App/Test';
 import RepoDetailScreen from 'screens/App/RepoDetailScreen';
 import Header from 'components/Header';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useColorScheme } from 'react-native'; // 🚀 1. 引入原生的颜色模式 Hook
-import type { RootStackParamList } from './types';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useColorScheme} from 'react-native'; // 🚀 1. 引入原生的颜色模式 Hook
+import type {RootStackParamList} from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -19,7 +19,7 @@ const RootNavigator = () => {
       <Stack.Navigator initialRouteName="app">
         <Stack.Screen
           name="test"
-          options={{ title: 'Test', headerShown: false }}
+          options={{title: 'Test', headerShown: false}}
           component={TestScreen}
         />
         <Stack.Screen

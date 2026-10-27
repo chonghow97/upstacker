@@ -28,26 +28,34 @@ const useHooks = () => {
   const queryClient = useQueryClient();
   const queryKey: FetchRepoKey = ['fetch-repo', {per_page: 10, query}];
 
-  const {refetch, fetchNextPage, hasNextPage, isPending, ...result} = useInfiniteQuery({
-    queryKey,
-    queryFn: fetchRepo,
-    // react-query v3 defaulted pageParam to 0 in fetchRepo; v5 requires it explicitly
-    initialPageParam: 0,
-    getNextPageParam: (lastPage, allPages) => {
-      const maxPage = lastPage.total_count / 10;
-      const nextPage = allPages.length + 1;
+  const {refetch, fetchNextPage, hasNextPage, isPending, ...result} =
+    useInfiniteQuery({
+      queryKey,
+      queryFn: fetchRepo,
+      // react-query v3 defaulted pageParam to 0 in fetchRepo; v5 requires it explicitly
+      initialPageParam: 0,
+      getNextPageParam: (lastPage, allPages) => {
+        const maxPage = lastPage.total_count / 10;
+        const nextPage = allPages.length + 1;
 
-      return nextPage <= maxPage ? nextPage : undefined;
-    },
-  });
+        return nextPage <= maxPage ? nextPage : undefined;
+      },
+    });
 
   // ============= ACTION
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     // only refetch the first page (v5 removed refetch({refetchPage}); trim the cache to page 1, then refetch)
-    queryClient.setQueryData<InfiniteData<RepoSearchResult, number>>(queryKey, data =>
-      data ? {pages: data.pages.slice(0, 1), pageParams: data.pageParams.slice(0, 1)} : data,
+    queryClient.setQueryData<InfiniteData<RepoSearchResult, number>>(
+      queryKey,
+      data =>
+        data
+          ? {
+              pages: data.pages.slice(0, 1),
+              pageParams: data.pageParams.slice(0, 1),
+            }
+          : data,
     );
     await refetch();
     setRefreshing(false);

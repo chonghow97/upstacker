@@ -4,7 +4,8 @@ export const GET_USER = 'GET_USER';
 const SET_USER = 'SET_USER';
 
 export const getUser = () => ({type: GET_USER}) as const;
-export const setUser = (user: RepoSearchResult) => ({type: SET_USER, user}) as const;
+export const setUser = (user: RepoSearchResult) =>
+  ({type: SET_USER, user}) as const;
 
 type UserAction = ReturnType<typeof getUser> | ReturnType<typeof setUser>;
 
@@ -16,7 +17,10 @@ const initialState: UserState = {
   user: undefined,
 };
 
-export default (state: UserState = initialState, action: UserAction): UserState => {
+export default (
+  state: UserState = initialState,
+  action: UserAction,
+): UserState => {
   switch (action.type) {
     case SET_USER: {
       const {user} = action;
